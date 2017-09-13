@@ -1,1 +1,2 @@
-# teste
+# artificial
+Projeto cadeira inteligencia artificial
