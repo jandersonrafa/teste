@@ -21,26 +21,26 @@ const defaultOptions = {
     j: true
 };
 
-function connect(mongoose, dbURI, options = {}) {
-    // Merge options with defaults
-    const driverOptions = Object.assign(defaultOptions, options);
+// function connect(mongoose, dbURI, options = {}) {
+//     // Merge options with defaults
+//     const driverOptions = Object.assign(defaultOptions, options);
 
-    // Use Promise from options (mongoose)
-    mongoose.Promise = driverOptions.promiseLibrary;
+//     // Use Promise from options (mongoose)
+//     mongoose.Promise = driverOptions.promiseLibrary;
 
-    // Connect
-    mongoose.connect(dbURI, driverOptions);
+//     // Connect
+//     mongoose.connect(dbURI, driverOptions);
 
-    // If the Node process ends, close the Mongoose connection
-    process.on('SIGINT', () => {
-        mongoose.connection.close(() => {
-            process.exit(0);
-        });
-    });
+//     // If the Node process ends, close the Mongoose connection
+//     process.on('SIGINT', () => {
+//         mongoose.connection.close(() => {
+//             process.exit(0);
+//         });
+//     });
 
-    return mongoose.connection;
-}
-connect(mongoose, database.url)
+//     return mongoose.connection;
+// }
+// connect(mongoose, database.url)
 // mongoose.connect(database.url, { useMongoClient: true }); 	// connect to mongoDB database on modulus.io
 // db.ON('error', console.error.bind(console, 'MongoDB connection error:'));
 
