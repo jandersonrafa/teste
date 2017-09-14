@@ -4,6 +4,9 @@
   "description": "Simple todo application.",
   "main": "app.js",
   "author": "Scotch",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "angular": "^1.6.6",
     "angular-ui-router": "^1.0.3",
